@@ -1,12 +1,12 @@
 package allen.model;
 
 /**
- * ×´Ì¬±ä»»¼àÌıÆ÷¡£
+ * çŠ¶æ€å˜æ¢ç›‘å¬å™¨ã€‚
  * */
 public interface StateListener {
 
 	/**
-	 * ×´Ì¬±ä»¯¡£
+	 * çŠ¶æ€å˜åŒ–ã€‚
 	 * */
 	public void update(Action action);
 }

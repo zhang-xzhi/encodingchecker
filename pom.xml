@@ -7,7 +7,7 @@
 
 	<groupId>allen.project</groupId>
 	<artifactId>encodingchecker</artifactId>
-	<version>0.5</version>
+	<version>0.6</version>
 	<name>encodingchecker</name>
 
 	<dependencies>
@@ -40,8 +40,8 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>1.10</source>
+					<target>1.10</target>
 				    <!--<encoding>UTF-8</encoding>-->
 				</configuration>
 			</plugin>

@@ -1,7 +1,7 @@
 package allen.model;
 
 /**
- * ³ÌĞò¶¯×÷¡£
+ * ç¨‹åºåŠ¨ä½œã€‚
  * 
  * <pre>
  * InitProgram
@@ -12,15 +12,15 @@ package allen.model;
 public enum Action {
 
     /**
-     * ÖØÖÃ³ÌĞòÎª³õÊ¼×´Ì¬.
+     * é‡ç½®ç¨‹åºä¸ºåˆå§‹çŠ¶æ€.
      * */
     InitProgram,
     /**
-     * ¼ÓÔØÎÄ¼ş¡£
+     * åŠ è½½æ–‡ä»¶ã€‚
      * */
     FileLoad,
     /**
-     * ¸Ä±ä±àÂë¡£
+     * æ”¹å˜ç¼–ç ã€‚
      * */
     ChangeEncoding;
 }

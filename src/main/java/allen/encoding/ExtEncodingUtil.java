@@ -15,11 +15,11 @@ public class ExtEncodingUtil {
     private static Log log = LogFactory.getLog(ExtEncodingUtil.class);
 
     /**
-     * Ğ£ÑédataÊÇ·ñÊÇ²ÉÓÃextEncoding±àÂë.
+     * æ ¡éªŒdataæ˜¯å¦æ˜¯é‡‡ç”¨extEncodingç¼–ç .
      * 
      * <pre>
-     * ¶ÔÓÚutf-16µÈ´øBOMµÄbytes,Èç¹ûbytes²»ÒÔBOM bytes¿ªÊ¼,ÔòÈÏÎª²»ÊÇÕıÈ·µÄ±àÂë.
-     * ¶ÔÓÚutf-16µÈ²»´øBOMµÄbytes,Èç¹ûbytesÒÔBOM bytes¿ªÊ¼,ÔòÈÏÎª²»ÊÇÕıÈ·µÄ±àÂë.
+     * å¯¹äºutf-16ç­‰å¸¦BOMçš„bytes,å¦‚æœbytesä¸ä»¥BOM byteså¼€å§‹,åˆ™è®¤ä¸ºä¸æ˜¯æ­£ç¡®çš„ç¼–ç .
+     * å¯¹äºutf-16ç­‰ä¸å¸¦BOMçš„bytes,å¦‚æœbytesä»¥BOM byteså¼€å§‹,åˆ™è®¤ä¸ºä¸æ˜¯æ­£ç¡®çš„ç¼–ç .
      * </pre>
      * */
     public static boolean isRightEncoding(byte[] data, String extEncoding) {
@@ -27,7 +27,7 @@ public class ExtEncodingUtil {
             return false;
         }
 
-        // ´¦ÀíBOM. With BOM.
+        // å¤„ç†BOM. With BOM.
         if (Encoding.isWithBomEncoding(extEncoding)) {
             byte[] bomBytes = Encoding.findBomBytes(extEncoding);
             if (!ArrayUtil.startWith(data, bomBytes)) {
@@ -38,7 +38,7 @@ public class ExtEncodingUtil {
             System.arraycopy(data, bomBytes.length, tem, 0, tem.length);
             data = tem;
         }
-        // ´¦ÀíBOM. Without BOM.
+        // å¤„ç†BOM. Without BOM.
         if (Encoding.isWithoutBomEncoding(extEncoding)) {
             byte[] bomBytes = Encoding.findBomBytes(extEncoding);
             if (ArrayUtil.startWith(data, bomBytes)) {
@@ -61,11 +61,11 @@ public class ExtEncodingUtil {
     }
 
     /**
-     * ½«dataÊ¹ÓÃdecoding½âÂë£¬È»ºóÊ¹ÓÃencoding±àÂë¡£
+     * å°†dataä½¿ç”¨decodingè§£ç ï¼Œç„¶åä½¿ç”¨encodingç¼–ç ã€‚
      * 
      * <pre>
-     * decodingÈç¹û²»ÄÜÕıÈ·decodingÔòÅ×Òì³£¡£ 
-     * encodingÈç¹û²»ÄÜÕıÈ·encodingÔòÅ×Òì³£¡£
+     * decodingå¦‚æœä¸èƒ½æ­£ç¡®decodingåˆ™æŠ›å¼‚å¸¸ã€‚ 
+     * encodingå¦‚æœä¸èƒ½æ­£ç¡®encodingåˆ™æŠ›å¼‚å¸¸ã€‚
      * </pre>
      * */
     public static byte[] convertBytes(byte[] data, String decoding,
@@ -105,10 +105,10 @@ public class ExtEncodingUtil {
     }
 
     /**
-     * ½âÂëbytesÎªstring,¶ÔextEncoding²»×öĞ£Ñé.
+     * è§£ç bytesä¸ºstring,å¯¹extEncodingä¸åšæ ¡éªŒ.
      * 
      * <pre>
-     * µ÷ÓÃ¸Ã·½·¨Ç°ĞèÒªÊ¹ÓÃ#isRightEncodingÀ´È·±£extEncodingÊÇÕıÈ·µÄ¡£
+     * è°ƒç”¨è¯¥æ–¹æ³•å‰éœ€è¦ä½¿ç”¨#isRightEncodingæ¥ç¡®ä¿extEncodingæ˜¯æ­£ç¡®çš„ã€‚
      * </pre>
      * */
     public static String decodeBytes(byte[] data, String extEncoding) {
@@ -117,7 +117,7 @@ public class ExtEncodingUtil {
             throw new RuntimeException("wrong data.");
         }
 
-        // ´¦ÀíBOM.
+        // å¤„ç†BOM.
         if (Encoding.isWithBomEncoding(extEncoding)) {
             byte[] bomBytes = Encoding.findBomBytes(extEncoding);
             if (!ArrayUtil.startWith(data, bomBytes)) {

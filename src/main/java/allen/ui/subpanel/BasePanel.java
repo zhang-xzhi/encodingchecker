@@ -38,7 +38,7 @@ abstract public class BasePanel extends JPanel implements StateListener {
     }
 
     /**
-     * ×ÓpanelµÄ±êÌâ¡£
+     * å­panelçš„æ ‡é¢˜ã€‚
      * */
     abstract protected String getTitle();
 

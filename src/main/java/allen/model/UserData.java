@@ -5,7 +5,7 @@ import java.io.File;
 import allen.main.Config;
 
 /**
- * ÓÃ»§Êı¾İ¡£
+ * ç”¨æˆ·æ•°æ®ã€‚
  * */
 public class UserData implements StateListener {
 
@@ -42,7 +42,7 @@ public class UserData implements StateListener {
 	}
 
 	/**
-	 * ÊÇ·ñÓĞ¿É¹¤×÷µÄÎÄ¼ş¡£
+	 * æ˜¯å¦æœ‰å¯å·¥ä½œçš„æ–‡ä»¶ã€‚
 	 * */
 	public boolean hasFile() {
 		return file != null;

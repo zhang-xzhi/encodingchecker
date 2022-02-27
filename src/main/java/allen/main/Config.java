@@ -8,15 +8,15 @@ import allen.encoding.Encoding;
 public class Config {
 
 	/**
-	 * ³ÌĞòÖ§³ÖµÄËùÓĞÀ©Õ¹±àÂë¡£
+	 * ç¨‹åºæ”¯æŒçš„æ‰€æœ‰æ‰©å±•ç¼–ç ã€‚
 	 * */
 	public static String[] extEncodings = Encoding.getExtEncodings();
 
 	/**
-	 * Ä¬ÈÏ±àÂë.
+	 * é»˜è®¤ç¼–ç .
 	 * 
 	 * <pre>
-	 * ´ó¼Ò¶¼ÓÃGBK,ÍêÈ«Ã»ÓĞÃæÏò¹ú¼Ê»¯.µ±È»,ÎÒĞ´ÖĞÎÄ×¢ÊÍÒ²ÊÇÒ»ÑùµÄ.
+	 * å¤§å®¶éƒ½ç”¨GBK,å®Œå…¨æ²¡æœ‰é¢å‘å›½é™…åŒ–.å½“ç„¶,æˆ‘å†™ä¸­æ–‡æ³¨é‡Šä¹Ÿæ˜¯ä¸€æ ·çš„.
 	 * </pre>
 	 * */
 	public static String Default_Encoding = extEncodings[0];

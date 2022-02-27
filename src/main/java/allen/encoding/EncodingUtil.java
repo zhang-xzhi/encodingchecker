@@ -11,7 +11,7 @@ public class EncodingUtil {
             "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", };
 
     /**
-     * ÒÔutf-8±àÂë×Ö·û´®ÎªHex×Ö·û´®¡£
+     * ä»¥utf-8ç¼–ç å­—ç¬¦ä¸²ä¸ºHexå­—ç¬¦ä¸²ã€‚
      * */
     public static String toHexStringUsingUtf8(String str) {
         if (str == null) {
@@ -27,7 +27,7 @@ public class EncodingUtil {
     }
 
     /**
-     * ½âÂëHexString¡£hexStringÎªutf-8¸ñÊ½¡£
+     * è§£ç HexStringã€‚hexStringä¸ºutf-8æ ¼å¼ã€‚
      * */
     public static String parseStringFromHexStringUsingUtf8(String str) {
         if (str == null) {
@@ -43,7 +43,7 @@ public class EncodingUtil {
     }
 
     /**
-     * ´Ó16½øÖÆµÄ×Ö·û´®strÖĞ½âÎöÒ»¸ö×Ö½ÚÊı×é¡£
+     * ä»16è¿›åˆ¶çš„å­—ç¬¦ä¸²strä¸­è§£æä¸€ä¸ªå­—èŠ‚æ•°ç»„ã€‚
      * 
      * */
     private static byte[] parseBytesFromHexString_0(String str) {
@@ -67,7 +67,7 @@ public class EncodingUtil {
     }
 
     /**
-     * ´Ó16½øÖÆµÄ×Ö·û´®strÖĞ½âÎöÒ»¸ö×Ö½ÚÊı×é¡£×Ö·û´®ÔÚ16½øÖÆ×Ö·ûÍâ¿ÉÒÔÓĞÆäËû×Ö·û£¬½âÎöÊ±×Ô¶¯ºöÂÔ¡£
+     * ä»16è¿›åˆ¶çš„å­—ç¬¦ä¸²strä¸­è§£æä¸€ä¸ªå­—èŠ‚æ•°ç»„ã€‚å­—ç¬¦ä¸²åœ¨16è¿›åˆ¶å­—ç¬¦å¤–å¯ä»¥æœ‰å…¶ä»–å­—ç¬¦ï¼Œè§£ææ—¶è‡ªåŠ¨å¿½ç•¥ã€‚
      * */
     public static byte[] parseBytesFromHexString(String str) {
         if (str == null) {

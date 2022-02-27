@@ -7,7 +7,7 @@ import java.util.Map;
  * Encoding.
  * 
  * <pre>
- * °üº¬javaµÄ±àÂëºÍÀ©Õ¹¶ÔbomÊ¶±ğµÄ±àÂë(À©Õ¹±àÂë).
+ * åŒ…å«javaçš„ç¼–ç å’Œæ‰©å±•å¯¹bomè¯†åˆ«çš„ç¼–ç (æ‰©å±•ç¼–ç ).
  * </pre>
  * */
 public class Encoding {
@@ -34,7 +34,7 @@ public class Encoding {
     public static String  GBK        = "GBK";
 
     /**
-     * µÃµ½À©Õ¹±àÂë±í,ËùÓĞºÍÀ©Õ¹±àÂëÏà¹ØµÄ´¦Àí,Ó¦¸Ãµ÷ÓÃ¸ÃÀàËùÔÚµÄ°üÖĞµÄ·½·¨Íê³É.
+     * å¾—åˆ°æ‰©å±•ç¼–ç è¡¨,æ‰€æœ‰å’Œæ‰©å±•ç¼–ç ç›¸å…³çš„å¤„ç†,åº”è¯¥è°ƒç”¨è¯¥ç±»æ‰€åœ¨çš„åŒ…ä¸­çš„æ–¹æ³•å®Œæˆ.
      * */
     public static String[] getExtEncodings() {
         return new String[] { GBK, US_ASCII, ISO_8859_1, UTF_8 + WithBom,
@@ -72,7 +72,7 @@ public class Encoding {
     }
 
     /**
-     * ´ÓÀ©Õ¹µÄ±àÂëµÃµ½Êµ¼ÊµÄ±àÂë¡£ Èô·ÇÀ©Õ¹±àÂë£¬Ôò·µ»ØÔ­Öµ¡£
+     * ä»æ‰©å±•çš„ç¼–ç å¾—åˆ°å®é™…çš„ç¼–ç ã€‚ è‹¥éæ‰©å±•ç¼–ç ï¼Œåˆ™è¿”å›åŸå€¼ã€‚
      * */
     public static String getRealEncoding(String extEncoding) {
         if (extEncoding.endsWith(WithBom)) {
@@ -87,26 +87,26 @@ public class Encoding {
     }
 
     /**
-     * À©Õ¹µÄ±àÂëÊÇ·ñ´øBOM.
+     * æ‰©å±•çš„ç¼–ç æ˜¯å¦å¸¦BOM.
      * */
     public static boolean isWithBomEncoding(String extEncoding) {
         return extEncoding.endsWith(WithBom);
     }
 
     /**
-     * À©Õ¹µÄ±àÂëÊÇ·ñ²»´øBOM.
+     * æ‰©å±•çš„ç¼–ç æ˜¯å¦ä¸å¸¦BOM.
      * */
     public static boolean isWithoutBomEncoding(String extEncoding) {
         return extEncoding.endsWith(WithoutBom);
     }
 
     /**
-     * ´ÓÀ©Õ¹µÄ±àÂëµÃµ½Bom×Ö½ÚÊı×é.
+     * ä»æ‰©å±•çš„ç¼–ç å¾—åˆ°Bomå­—èŠ‚æ•°ç»„.
      * 
      * <pre>
-     * extEncoding±ØĞëÂú×ãisWithBomEncoding»òisWithoutBomEncodingÎªtrue.
-     * _withBomµÄ±àÂëµÃµ½¶ÔÓ¦µÄ bytes.
-     * _withoutBomµÄ±àÂëµÃµ½¶ÔÓ¦µÄ_withBomµÄbytes.
+     * extEncodingå¿…é¡»æ»¡è¶³isWithBomEncodingæˆ–isWithoutBomEncodingä¸ºtrue.
+     * _withBomçš„ç¼–ç å¾—åˆ°å¯¹åº”çš„ bytes.
+     * _withoutBomçš„ç¼–ç å¾—åˆ°å¯¹åº”çš„_withBomçš„bytes.
      * </pre>
      * */
     public static byte[] findBomBytes(String extEncoding) {

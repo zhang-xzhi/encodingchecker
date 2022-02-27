@@ -8,14 +8,14 @@ public class StateMachine {
 	private static List<StateListener> listeners = new ArrayList<StateListener>();
 
 	/**
-	 * ×¢²á¼àÌıÆ÷¡£
+	 * æ³¨å†Œç›‘å¬å™¨ã€‚
 	 * */
 	public static void register(StateListener listener) {
 		listeners.add(listener);
 	}
 
 	/**
-	 * ´¥·¢¶¯×÷¡£
+	 * è§¦å‘åŠ¨ä½œã€‚
 	 * */
 	public static void takeAction(Action action) {
 		for (StateListener listener : listeners) {
