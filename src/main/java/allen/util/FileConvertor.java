@@ -16,9 +16,13 @@ public class FileConvertor {
 	}
 
 	private static List<String> ignores = new ArrayList<String>();
+	private static List<String> fileToHandle = new ArrayList<String>();
 	static {
 		ignores.add(".git");
 		ignores.add("target");
+
+		fileToHandle.add(".java");
+		fileToHandle.add(".txt");
 	}
 
 	public static void convert(String filePath) throws Exception {
@@ -53,8 +57,15 @@ public class FileConvertor {
 		File newFile = new File(oldFilePath + ".allen.new");
 		File bakFile = new File(oldFilePath + ".allen.bak");
 
-		if (!oldFilePath.endsWith(".java")) {
-			out.println("ok. ignore file [not java file] = " + oldFilePath);
+		boolean toHandle = false;
+		for (String s : fileToHandle) {
+			if (oldFilePath.endsWith(s)) {
+				toHandle=true;
+			}
+		}
+		
+		if (!toHandle) {
+			out.println("ok. ignore file [not to handle] = " + oldFilePath);
 			return;
 		}
 
