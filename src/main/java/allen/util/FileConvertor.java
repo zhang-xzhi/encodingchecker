@@ -5,14 +5,19 @@ import static java.lang.System.*;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import allen.encoding.Encoding;
 import allen.encoding.ExtEncodingUtil;
 
 public class FileConvertor {
 	public static void main(String[] args) throws Exception {
-		String path = "/Users/zhangxinzhi/allen_code/memoryutil";
-		convert(path);
+		out.println("pls input dir to convert.");
+		try (Scanner scanner = new Scanner(System.in)) {
+			String path = scanner.nextLine();
+			path = path.trim();
+			convert(path);
+		}
 	}
 
 	private static List<String> ignores = new ArrayList<String>();
@@ -32,7 +37,7 @@ public class FileConvertor {
 	public static void convert(File file) throws Exception {
 		if (file.isDirectory()) {
 			if (ignores.contains(file.getName())) {
-				out.println("ok. ignore dir = " + file.getAbsolutePath());
+				out.println("ignore. ignore dir = " + file.getAbsolutePath());
 				return;
 			}
 
@@ -60,19 +65,19 @@ public class FileConvertor {
 		boolean toHandle = false;
 		for (String s : fileToHandle) {
 			if (oldFilePath.endsWith(s)) {
-				toHandle=true;
+				toHandle = true;
 			}
 		}
-		
+
 		if (!toHandle) {
-			out.println("ok. ignore file [not to handle] = " + oldFilePath);
+			out.println("ignore. ignore file [not to handle] = " + oldFilePath);
 			return;
 		}
 
 		byte[] data = FileReadUtil.readBytes(file);
 
 		if (ExtEncodingUtil.isRightEncoding(data, Encoding.UTF_8)) {
-			out.println("ok. ignore file [UTF-8 file] = " + oldFilePath);
+			out.println("ignore. ignore file [UTF-8 file] = " + oldFilePath);
 			return;
 		}
 
